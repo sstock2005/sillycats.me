@@ -1,0 +1,4 @@
+##RENAME FILE TO config.txt and remove this line
+[DEFAULT]
+secret=MD5 Hash (generate one)
+host=http://localhost:7777
