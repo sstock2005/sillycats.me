@@ -17,11 +17,11 @@ def home():
         <title>{random.choice(cat_noises)} - sillycats.me</title>
         <meta property="og:title" content="{random.choice(cat_noises)} - sillycats.me" />
         <meta property="og:type" content="image.png" />
-        <meta property="og:url" content="https://sillycats.me />
-        <meta property="og:image" content="https://sillycats.me/cat" />
+        <meta property="og:url" content="https://sillycats.me" />
+        <meta property="og:image" content="https://sillycats.me/api/cat" />
     </head>
     <body style="background-color: #131516">
-        <center><img src="{host}/cat" alt="silly cat"><br><a href="https://github.com/sstock2005" target="_blank" style="font-weight: bold;text-decoration: none;color: #FFFFFF;">My GitHub</a></center>
+        <center><img src="{host}/api/cat" alt="silly cat"><br><a href="https://github.com/sstock2005" target="_blank" style="font-weight: bold;text-decoration: none;color: #FFFFFF;">My GitHub</a></center>
     </body>
     </html>
     """
