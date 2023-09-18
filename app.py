@@ -8,9 +8,9 @@ config.readfp(open(r'config.txt'))
 app = Flask(__name__)
 app.secret_key = config.get("DEFAULT", "secret")
 host = config.get("DEFAULT", "host")
+cat_noises = ["meow!", "meowwww", "grrr!", "miaow", "mrruh", "prrrup", "mrow", "mrrrrrr"]
 @app.route('/')
 def home():
-    cat_noises = ["meow!", "meowwww", "grrr!", "miaow", "mrruh", "prrrup", "mrow", "mrrrrrr"]
     html_content = f"""
     <html>
     <head>
@@ -28,7 +28,7 @@ def home():
 
     return html_content, 200, {'Content-Type': 'text/html'}
 
-@app.route('/cat')
+@app.route('/api/cat')
 def cat():
     if 'last_cat' not in session:
         session['last_cat'] = None
@@ -38,4 +38,7 @@ def cat():
     session['last_cat'] = picture
     return send_file("pictures/{}".format(picture), "image/png", False)
 
+@app.route('/api/noise')
+def noise():
+    return random.choice(cat_noises), 200, {'Content-Type': 'text/plain'}
 app.run('0.0.0.0', 7777, False)
