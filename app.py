@@ -30,13 +30,17 @@ def home():
 
 @app.route('/api/cat')
 def cat():
-    if 'last_cat' not in session:
-        session['last_cat'] = None
-    picture = random.choice(os.listdir("./pictures"))
-    while picture == session['last_cat']:
+    if random.randint(0, 10000) == 6969:
+        picture = "rare.png"
+        return send_file(picture, "image/png", False), 418
+    else:
+        if 'last_cat' not in session:
+            session['last_cat'] = None
         picture = random.choice(os.listdir("./pictures"))
-    session['last_cat'] = picture
-    return send_file("pictures/{}".format(picture), "image/png", False)
+        while picture == session['last_cat']:
+            picture = random.choice(os.listdir("./pictures"))
+        session['last_cat'] = picture
+        return send_file("pictures/{}".format(picture), "image/png", False)
 
 @app.route('/api/noise')
 def noise():
