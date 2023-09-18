@@ -13,8 +13,9 @@ The purpose of this application is to show the user a random image of a silly ca
 
 ## API
 ```
-Endpoint |            Response
-  /cat   | raw image of random silly cat
+  Endpoint   |            Response
+  /api/cat   |  raw image of random silly cat
+  /api/noise |  random cat noise in plaintext
 ```
 
 ## Installaion
