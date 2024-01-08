@@ -9,19 +9,20 @@ app = Flask(__name__)
 app.secret_key = config.get("DEFAULT", "secret")
 host = config.get("DEFAULT", "host")
 cat_noises = ["meow!", "meowwww", "grrr!", "miaow", "mrruh", "prrrup", "mrow", "mrrrrrr"]
-@app.route('/')
+@app.route('/', methods=["GET"])
 def home():
+    noise = random.choice(cat_noises)
     html_content = f"""
     <html>
     <head>
-        <title>{random.choice(cat_noises)} - sillycats.me</title>
-        <meta property="og:title" content="{random.choice(cat_noises)} - sillycats.me" />
+        <title>{noise} - sillycats.me</title>
+        <meta property="og:title" content="{noise} - sillycats.me" />
         <meta property="og:type" content="image.png" />
         <meta property="og:url" content="https://sillycats.me" />
         <meta property="og:image" content="https://sillycats.me/api/cat" />
     </head>
     <body style="background-color: #131516">
-        <center><img src="{host}/api/cat" alt="silly cat"><br><a href="https://github.com/sstock2005" target="_blank" style="font-weight: bold;text-decoration: none;color: #FFFFFF;">My GitHub</a></center>
+        <center><br><h3>{noise}</h3><br><img width="300px" src="{host}/api/cat" alt="silly cat"><br><br><a href="https://github.com/sstock2005/sillycats.me" target="_blank" style="font-weight: bold;text-decoration: none;color: #FFFFFF;">Source Code</a>  |  <a href="https://github.com/sstock2005" target="_blank" style="font-weight: bold;text-decoration: none;color: #FFFFFF;">My GitHub</a><br><br></center>
     </body>
     </html>
     """
