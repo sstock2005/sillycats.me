@@ -7,8 +7,6 @@ The purpose of this application is to show the user a random image of a silly ca
 ## Roadmap
 ```
 - Add more images
-- Force image to fit screen
-    - Especially on mobile!
 ```
 
 ## API
