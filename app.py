@@ -21,7 +21,7 @@ def home():
         <meta property="og:url" content="https://sillycats.me" />
         <meta property="og:image" content="https://sillycats.me/api/cat" />
     </head>
-    <body style="background-color: #131516">
+    <body style="background-color: #131516; color: #FFFFFF">
         <center><br><h3>{noise}</h3><br><img width="300px" src="{host}/api/cat" alt="silly cat"><br><br><a href="https://github.com/sstock2005/sillycats.me" target="_blank" style="font-weight: bold;text-decoration: none;color: #FFFFFF;">Source Code</a>  |  <a href="https://github.com/sstock2005" target="_blank" style="font-weight: bold;text-decoration: none;color: #FFFFFF;">My GitHub</a><br><br></center>
     </body>
     </html>
