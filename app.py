@@ -2,7 +2,7 @@ from flask import Flask, send_file, request, session
 import os, random, configparser
 
 config = configparser.ConfigParser()
-config.readfp(open(r'config.txt'))
+config.read(r'config.txt')
 
 
 app = Flask(__name__)
